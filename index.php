@@ -133,6 +133,7 @@ foreach($page_data as $page){
             <div class="card__urltext">
                 <?=$page["url"]?>
             </div>
+<?php } ?>
           </div>
 <?php  if($no_access){ ?>
         </div>

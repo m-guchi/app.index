@@ -71,13 +71,8 @@ if($user_id){
 <html lang="ja">
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MKGFTM8N');</script>
-<!-- End Google Tag Manager -->
-
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MKGFTM8N');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App一覧</title>
@@ -90,9 +85,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKGFTM8N"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKGFTM8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="topbar">
         <div class="top__title">App一覧</div>
@@ -129,22 +123,13 @@ foreach($page_data as $page){
             <div class="card__urltext">
                 <?=$page["url"]?>
             </div>
-<?php }
-    // if($data["anonymous"]==true){
-    //     echo "<div class='card__authtext'>@_all</div>";
-    // }else if(empty($data["auth"]) && $user_id){
-    //     echo "<div class='card__authtext'>@_login_user</div>";
-    // }else if(!empty($data["auth"])){
-    //     echo "<div class='card__authtext'>@{$data['auth']}</div>";
-    // }
-?>
           </div>
 <?php  if($no_access){ ?>
         </div>
 <?php  }else{ ?>
         </a>
-<?php  } ?>
 <?php
+        }
     }
 }
 ?>

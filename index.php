@@ -6,6 +6,8 @@ session_start();
 include_once(__DIR__."/db.php");
 $db = new AppPage\DB();
 
+//ログインユーザーの検証
+$is_login = false;
 $user_id = empty($_SESSION["user"]) ? false : $_SESSION["user"];
 if($user_id){
     try{
@@ -18,7 +20,12 @@ if($user_id){
         return false;
     }
     $user_data = $sth->fetch(PDO::FETCH_ASSOC);
-    $user_name = $user_data ? $user_data["user_name"] : false;
+    if($user_data===false){
+        $user_name = false;
+    }else{
+        $user_name = $user_data["user_name"];
+        $is_login = true;
+    }
 }else{
     $user_name = false;
 }
@@ -92,7 +99,7 @@ if($user_id){
         <div class="top__title">App一覧</div>
 <?php
 
-if($user_id!==false){
+if($is_login){
     echo '<a class="top__login" href="https://app.minagu.work/login/">'.$user_name.' で<span class="top__underline">ログイン中</span></a>';
 }else{
     echo '<a class="top__login" href="https://app.minagu.work/login/"><span class="top__underline">ログイン</span></a>';

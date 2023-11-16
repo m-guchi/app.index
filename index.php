@@ -4,11 +4,13 @@ session_start();
 
 
 include_once(__DIR__."/db.php");
+include_once(__DIR__."/../auth/check.php");
 $db = new AppPage\DB();
+$check = new Check();
 
 //ログインユーザーの検証
 $is_login = false;
-$user_id = empty($_SESSION["user"]) ? false : $_SESSION["user"];
+$user_id = $check->fetch_user_from_cookie();
 if($user_id){
     try{
         $sql = "SELECT user_name FROM users WHERE id = :id";

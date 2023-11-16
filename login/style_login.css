@@ -1,0 +1,93 @@
+body {
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    margin: 0;
+}
+
+.topbar{
+    background-color: #3f51b5;
+    margin-bottom: 20px;
+    padding: 7px 0 5px;
+    color: #fff;
+    font-size: 18px;
+    width: 100vw;
+    position: fixed;
+}
+.top__title{
+    font-weight: bold;
+    margin-left: 20px;
+}
+.top__login{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.top__underline{
+    text-decoration: underline;
+}
+
+
+.login {
+    max-width: 400px;
+    width: 90vw;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+}
+.login p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 12px;
+}
+
+.login-container {
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+
+.login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+    border-color: #888;
+}
+
+.login input[type="submit"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #4c8ae7;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+    background: #336fc9;
+}
+
+.login input[type="submit"]:focus {
+    border-color: #336fc9;
+}

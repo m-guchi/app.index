@@ -112,32 +112,24 @@ if($is_login){
 foreach($page_data as $page){
     if($page["anyone_display"]==true || in_array($page["id"], $display_page_id)){
         $no_access = !($page["anyone_access"]==true || in_array($page["id"], $access_page_id));
+        if($no_access){
+            echo '<div class="card" style="background-color:#ccc">';
+        }else{
+            echo '<a class="card" href='.$page["url"].' target="_blank">';
+        }
 ?>
-<?php  if($no_access){ ?>
-        <div class="card" style="background-color:#ccc">
-<?php  }else{ ?>
-        <a class="card" href="<?=$page["url"]?>" target="_blank">
-<?php  } ?>
-          <div class="card__textbox">
+        <div class="card__textbox">
             <div class="card__titletext">
                 <?=$page["title_name"]?>
             </div>
             <div class="card__overviewtext">
                 <?=$page["overview"]?>
             </div>
-<?php if($no_access){ ?>
-            <div class="card_noaccess">アクセスが制限されているため、詳細は表示されません。</div>
-<?php  }else{ ?>
-            <div class="card__urltext">
-                <?=$page["url"]?>
-            </div>
-<?php } ?>
-          </div>
-<?php  if($no_access){ ?>
-        </div>
-<?php  }else{ ?>
-        </a>
 <?php
+        if($no_access){
+            echo '<div class="card_noaccess">アクセスが制限されているため、詳細は表示されません。</div></div></div>';
+        }else{
+            echo '<div class="card__urltext">'.$page["url"].'</div></div></a>';
         }
     }
 }

@@ -1,0 +1,91 @@
+body {
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    margin: 0;
+}
+
+.topbar{
+    background-color: #3f51b5;
+    margin-bottom: 20px;
+    padding: 7px 0 5px;
+    color: #fff;
+    font-size: 18px;
+    width: 100vw;
+    position: fixed;
+}
+.top__title{
+    font-weight: bold;
+    margin-left: 20px;
+}
+.top__login{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.top__underline{
+    text-decoration: underline;
+}
+
+.card-group{
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    max-width: 1100px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.card{
+    background-color: #fff;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.2);
+    color: initial;
+    text-decoration: initial;
+    word-break: break-all;
+}
+.card:hover{
+    cursor: pointer;
+}
+.card__textbox{
+    width: 100%;
+    height: auto;
+    padding: 20px 18px;
+    box-sizing: border-box;
+}
+.card__textbox > * + *{
+    margin-top: 10px;
+}
+.card__titletext{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 125%;
+}
+.card__overviewtext{
+    font-size: 12px;
+    line-height: 150%;
+}
+.card__urltext{
+    font-size: 12px;
+    line-height: 150%;
+    color: #1A1ABB;
+}
+.card_noaccess{
+    font-size: 10px;
+    line-height: 150%;
+    color: #bb1a1a;
+}
+.card__authtext{
+    font-size: 12px;
+    line-height: 150%;
+    background-color: #ccc;
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 5px;
+}

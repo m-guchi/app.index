@@ -101,7 +101,7 @@ if($user_id){
 <?php
 
 if($is_login){
-    echo '<a class="top__login" href="https://app.minagu.work/login/">'.$user_name.' で<span class="top__underline">ログイン中</span></a>';
+    echo '<a class="top__login" href="https://app.minagu.work/login/">'.$user_name.' 　<span class="top__underline">ログアウト</span></a>';
 }else{
     echo '<a class="top__login" href="https://app.minagu.work/login/"><span class="top__underline">ログイン</span></a>';
 }

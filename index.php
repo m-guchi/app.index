@@ -30,6 +30,7 @@ if($user_id){
     $user_name = false;
 }
 
+//ページ一覧を取得
 try{
     $sql = "SELECT * FROM pages";
     $sth = $db->pdo->prepare($sql);
@@ -40,13 +41,14 @@ try{
 }
 $page_data = $sth->fetchAll(PDO::FETCH_ASSOC);
 
+//表示できるページを取得
 if($user_id){
-    $bool_true = true;
+    $display_true = true;
     try{
-        $sql = "SELECT page_id FROM scopes WHERE user_id = :user_id and display = :display";
+        $sql = "SELECT page_id FROM scopes WHERE user_id = :user_id and display = true";
         $sth = $db->pdo->prepare($sql);
         $sth->bindParam(':user_id', $user_id);
-        $sth->bindParam(':display', $bool_true);
+        // $sth->bindParam(':display', $display_true);
         $sth->execute();
     }catch(PDOException $e){
         echo $e;
@@ -54,11 +56,12 @@ if($user_id){
     }
     $display_page_id = array_map(function($page){return $page["page_id"];} ,$sth->fetchAll(PDO::FETCH_ASSOC));
 
+    $access_true = true;
     try{
-        $sql = "SELECT page_id FROM scopes WHERE user_id = :user_id and access = :access";
+        $sql = "SELECT page_id FROM scopes WHERE user_id = :user_id and access = true";
         $sth = $db->pdo->prepare($sql);
         $sth->bindParam(':user_id', $user_id);
-        $sth->bindParam(':access', $bool_true);
+        // $sth->bindParam(':access', $access_true);
         $sth->execute();
     }catch(PDOException $e){
         echo $e;

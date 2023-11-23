@@ -131,5 +131,9 @@ foreach($page_data as $page){
     }
 }
 ?>
+<div><button id="clk_push_btn">通知を許可</button></div>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js"></script>
+<script src="./notification.js" delay></script>
 </body>
 </html>
